@@ -28,16 +28,18 @@ div {
     <!-- <input type="text" id="token" name="" value="" placeholder="" readonly="false"> -->  
 </body>  
 <script type="text/javascript">  
-var ws = new WebSocket("ws://localhost:3000?t=test");  
-ws.onopen = function() {  
+var ws = new WebSocket("ws://localhost:3000");  
+ws.onopen = function(evt) {  
     console.log("连接状态", ws);  
     $("#show").html("连接状态;" + ws.readyState + "</br>");  
     console.log("open");  
-    ws.open("start");  
+    // ws.open("start");  
 };  
+console.log(ws.send);
 ws.onmessage = function(evt) {  
     // console.log(evt.data)  
     // alert(evt.data);  
+    console.log(evt);
     $("#show").append(evt.data + "</br>");  
 };  
 ws.onclose = function(evt) {  
