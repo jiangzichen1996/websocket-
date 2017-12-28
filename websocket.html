@@ -33,13 +33,9 @@ ws.onopen = function(evt) {
     console.log("连接状态", ws);  
     $("#show").html("连接状态;" + ws.readyState + "</br>");  
     console.log("open");  
-    // ws.open("start");  
 };  
-console.log(ws.send);
-ws.onmessage = function(evt) {  
-    // console.log(evt.data)  
-    // alert(evt.data);  
-    console.log(evt);
+console.log(ws);
+ws.onmessage = function(evt) {   
     $("#show").append(evt.data + "</br>");  
 };  
 ws.onclose = function(evt) {  

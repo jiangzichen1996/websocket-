@@ -20,7 +20,7 @@ function socketVerify(info) {
 }  
 //广播  
 wss.broadcast = function broadcast(s,ws) {  
-    console.log(ws);  
+    console.log(ws); 
     // debugger;  
     wss.clients.forEach(function each(client) {  
         // if (typeof client.user != "undefined") {  
@@ -36,7 +36,8 @@ wss.broadcast = function broadcast(s,ws) {
 // 初始化  
 wss.on('connection', function(ws) {  
     // console.log(ws.clients.session);  
-    // console.log("在线人数", wss.clients.length);  
+    // console.log("在线人数", wss.clients.length); 
+    console.log(wss.clients)      
     ws.send('你是第' + wss.clients.length + '位');  
     // 发送消息  
     ws.on('message', function(jsonStr,flags) {  
