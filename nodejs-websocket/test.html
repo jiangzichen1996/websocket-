@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.11.0.js"></script>  
+    <style>
+    .active{
+        color:red;
+    }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+            <a class="active" href="javascript:void(0)">111</a>
+            <a href="javascript:void(0)">222</a>
+    </div>
+   
+    <script>
+        $('.nav a').on('click',function(){
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    </script>
+</body>
+</html>
